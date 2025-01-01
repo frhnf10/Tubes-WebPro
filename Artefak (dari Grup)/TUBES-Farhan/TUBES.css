@@ -1,0 +1,53 @@
+.navbar-expand-lg{
+    background-color: #51C851;
+}
+
+#Profile{
+    height: 25px;
+}
+
+.pad{
+    padding: 20px;
+}
+
+.kontainer {
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid #000;
+}
+
+.bagian{
+    padding-left: 20px;
+}
+
+.buku {
+    display: flex;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+#kover {
+    width: 130px;
+    height: 150px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: #51C851;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a {
+    color: white;
+    margin: 10px;
+}

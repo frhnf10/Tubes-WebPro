@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Buku</title>
+    <style>
+        .preview-container {
+            padding: 20px;
+        }
+        .preview-container .book-cover {
+            width: 150px;
+            height: 200px;
+            background-color: #e0e0e0;
+            margin: 0 auto 20px;
+        }
+        .preview-container .form-group {
+            margin-bottom: 15px;
+        }
+        .preview-container .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .preview-container .form-group input,
+        .preview-container .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+        .preview-container .btn-group {
+            text-align: center;
+        }
+        .preview-container .btn-group button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .preview-container .btn-group .btn-read {
+            background-color: #28a745;
+            color: white;
+        }
+        .preview-container .btn-group .btn-add {
+            background-color: #6c757d;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <div class="book-cover"></div>
+        <div class="form-group">
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" value="Mystery, Fantasy, Action" readonly>
+        </div>
+        <div class="form-group">
+            <label for="author">Pengarang:</label>
+            <input type="text" id="author" value="Arthur Conan Doyle" readonly>
+        </div>
+        <div class="form-group">
+            <label for="synopsis">Sinopsis:</label>
+            <textarea id="synopsis" rows="4" readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vehicula quam.</textarea>
+        </div>
+        <div class="form-group">
+            <label for="published-year">Tahun Terbit:</label>
+            <input type="text" id="published-year" value="1999" readonly>
+        </div>
+        <div class="btn-group">
+            <button class="btn-read">Baca</button>
+            <button class="btn-add">Tambah</button>
+        </div>
+    </div>
+</body>
+</html>
