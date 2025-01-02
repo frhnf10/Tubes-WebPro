@@ -1,0 +1,13 @@
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    flex: 1;
+}
+.footer {
+    background-color: #2b9647;
+    color: white;
+    padding: 15px;
+}

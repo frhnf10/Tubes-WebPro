@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.category select {
+    margin-left: 20px;
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.search-bar input {
+    padding: 5px;
+    margin: 0 20px;
+    width: 200px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.add-book {
+    background-color: #fff;
+    color: #000000;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.profile-container {
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile span {
+    color: #333;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.dropdown-icon {
+    color: #333;
+    font-size: 0.8em;
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.book-item {
+    text-align: center;
+}
+
+.book-cover {
+    width: 150px;
+    height: 200px;
+    background-color: #ddd;
+    margin: 0 auto 10px;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    position: relative;
+}
+
+.footer-links {
+    position: absolute;
+    right: 10px;
+}
+
+.footer-links a {
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.preview-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.preview-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.preview-container .book-cover {
+    width: 150px;
+    height: 200px;
+    background-color: #e0e0e0;
+    margin: 0 auto 20px;
+}
+
+.preview-container .form-group {
+    margin-bottom: 15px;
+}
+
+.preview-container .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.preview-container .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.preview-container .btn-group {
+    text-align: center;
+}
+
+.preview-container .btn-group button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.preview-container .btn-group .btn-read {
+    background-color: #28a745;
+    color: white;
+}
+
+.preview-container .btn-group .btn-add {
+    background-color: #6c757d;
+    color: white;
+}
+
+.close-preview {
+    text-align: right;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar{
+    background-color: #4CAF50;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .category
+    
+    .search-bar
+    
+    .add-book, 
+    
+    .profile-container {
+        margin-top: 10px;
+        background-color: white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    footer {
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin-top: 10px;
+    }
+}
+
+
+
+
+
+
+@media (max-width: 576px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .category, .search-bar, .add-book, .profile-container {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .search-bar input {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .add-book {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        font-size: 12px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links {
+        margin-top: 10px;
+        text-align: center;
+    }
+}
