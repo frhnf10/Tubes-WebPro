@@ -10,12 +10,17 @@ Route::get('/addlibrary', function () {
     return view('addlibrary');
 });
 
+
 Route::get('/adminpage-userlist', function () {
     return view('adminpage-userlist');
 });
 
 Route::get('/adminpage', function () {
     return view('adminpage');
+});
+
+Route::get('/admin-bookrequest', function () {
+    return view('admin-bookrequest');
 });
 
 Route::get('/dashboard-preview', function () {
@@ -45,3 +50,5 @@ Route::get('/profile', function () {
 Route::get('/signup', function () {
     return view('signup');
 });
+
+

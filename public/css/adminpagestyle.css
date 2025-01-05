@@ -123,3 +123,9 @@ footer {
 .container {
   margin-top: 20px;
 }
+
+.sidebar a.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}

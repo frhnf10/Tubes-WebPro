@@ -13,9 +13,9 @@
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
       <h5 class="text-center">UReadStory</h5>
-      <a href="index.html"><i class="fas fa-th-large"></i> Dashboard</a> <!--tembak ke "adminpage-userlist.blade.php"-->
-      <a href="user-list.html"><i class="fas fa-users"></i> User List</a> <!--tembak ke diri sendiri-->
-      <a href="#"><i class="fas fa-book"></i> Book Request</a>
+      <a href="{{ url('/adminpage') }}"><i class="fas fa-th-large"></i> Dashboard</a>
+      <a href="{{ url('/adminpage-userlist') }}"><i class="fas fa-users"></i> User List</a>
+      <a href="{{ url('/admin-bookrequest') }}"><i class="fas fa-book"></i> Book Request</a>
     </div>
 
     <!-- Main content -->
