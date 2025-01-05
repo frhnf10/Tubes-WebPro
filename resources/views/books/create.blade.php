@@ -4,39 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Buku</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-    <form action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div>
+    <header>
+        <div class="logo">UReadStory</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Jelajahi">
+        </div>
+        <div class="profile">
+            <span>@siti_marlina</span>
+            <img src="https://via.placeholder.com/30" alt="Profile Picture">
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Tambah Buku</h1>
+        <form action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <label for="title">Judul Buku</label>
             <input type="text" name="title" required>
-        </div>
-        <div>
+
             <label for="author">Pengarang</label>
             <input type="text" name="author" required>
-        </div>
-        <div>
+
             <label for="category">Kategori</label>
             <input type="text" name="category" required>
-        </div>
-        <div>
+
             <label for="year">Tahun Terbit</label>
             <input type="number" name="year" required>
-        </div>
-        <div>
+
             <label for="synopsis">Sinopsis Buku</label>
             <textarea name="synopsis"></textarea>
-        </div>
-        <div>
+
             <label for="cover">Cover Buku</label>
             <input type="file" name="cover">
-        </div>
-        <div>
+
             <label for="file">Masukkan file buku (PDF only)</label>
             <input type="file" name="file" required>
-        </div>
-        <button type="submit">Request Submit</button>
-    </form>
+
+            <button type="submit">Request Submit</button>
+        </form>
+    </div>
+
+    <footer>
+        © 2024 UReadStory - Privacy Policy | Help
+    </footer>
 </body>
 </html>
