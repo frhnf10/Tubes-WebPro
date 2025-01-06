@@ -43,7 +43,6 @@
                     @else
                         <img src="https://via.placeholder.com/150x200?text=No+Cover" alt="No Cover" style="width: 100%; height: auto; border-radius: 8px;">
                     @endif
-                    <a href="{{ asset('storage/' . $book->file) }}" target="_blank">Download PDF</a>
                     <!-- Menampilkan Judul Buku -->
                     <p><strong>{{ $book->title }}</strong></p>
                     <!-- Menampilkan Status (Publish/Pending) -->
