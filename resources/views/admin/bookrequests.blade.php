@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User List</title>
+  <title>Book Request</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/adminpagestyle.css">
@@ -20,32 +20,41 @@
 
     <!-- Main content -->
     <div class="content">
-      <h2 class="text-center mb-4">User List</h2>
+      <h2 class="text-center mb-4">Book Request</h2>
       <div class="container">
-        <div class="row">
-          <!-- User Card Template -->
-          <div class="col-md-6 mb-3">
-            <div class="user-card p-3 d-flex align-items-center">
-              <img src="user.jpg" alt="User Image" class="user-img">
-              <div class="ms-3">
-                <div><strong>MariaDBBB</strong></div>
-                <div>MariaDB@gmail.com</div>
-              </div>
-            </div>
-          </div>
+        <div class="table-responsive">
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Judul</th>
+      <th>Pengarang</th>
+      <th>Kategori</th>
+      <th>Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($books as $book)
+    <tr>
+      <td>{{ $loop->iteration }}</td>
+      <td>{{ $book->title }}</td>
+      <td>{{ $book->author }}</td>
+      <td>{{ $book->category }}</td>
+      <td>
+        <form action="{{ route('admin.bookrequests.approve', $book->id) }}" method="POST" style="display: inline-block;">
+          @csrf
+          <button class="btn btn-success btn-sm">Approve</button>
+        </form>
+        <form action="{{ route('admin.bookrequests.reject', $book->id) }}" method="POST" style="display: inline-block;">
+          @csrf
+          <button class="btn btn-danger btn-sm">Reject</button>
+        </form>
+      </td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
 
-          <!-- Duplicate user cards for display purposes -->
-          <div class="col-md-6 mb-3">
-            <div class="user-card p-3 d-flex align-items-center">
-              <img src="user.jpg" alt="User Image" class="user-img">
-              <div class="ms-3">
-                <div><strong>MariaDBBB</strong></div>
-                <div>MariaDB@gmail.com</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Add more user cards as needed -->
         </div>
       </div>
     </div>

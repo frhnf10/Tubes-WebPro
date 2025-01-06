@@ -19,7 +19,7 @@
     </header>
 
     <div class="library">
-        <h1>My Library</h1>
+    <h1>My Library</h1>
 
         <!-- Bagian Sedang Dibaca Dikosongkan -->
         <h2>Sedang Dibaca</h2>
@@ -30,29 +30,29 @@
         <!-- Bagian Daftar Simpan -->
         <h2>Daftar Simpan</h2>
         <div class="grid">
-            @foreach($books as $book)
-                <div class="grid-item">
-                    <h2>{{ $book->title }}</h2>
-                    <p>{{ $book->author }}</p>
-                    <p>{{ $book->category }}</p>
-                    <p>{{ $book->year }}</p>
-                    <p>{{ $book->synopsis }}</p>
-                    <!-- Menampilkan Cover Buku -->
-                    @if($book->cover)
-                        <img src="{{ asset('storage/' . $book->cover) }}" alt="{{ $book->title }}" style="width: 100%; height: auto; border-radius: 8px;">
-                    @else
-                        <img src="https://via.placeholder.com/150x200?text=No+Cover" alt="No Cover" style="width: 100%; height: auto; border-radius: 8px;">
-                    @endif
-                    <!-- Menampilkan Judul Buku -->
-                    <p><strong>{{ $book->title }}</strong></p>
-                    <!-- Menampilkan Status (Publish/Pending) -->
-                    <p class="{{ $book->status == 'pending' ? 'status-pending' : 'status-publish' }}">
-                        {{ $book->status == 'pending' ? 'Pending Publish' : 'Publish' }}
-                    </p>
-                </div>
-            @endforeach
+            @if($books->isEmpty())
+                <!-- Pesan jika tidak ada buku yang disetujui -->
+                <p>Belum ada buku yang tersedia. Silakan tambahkan buku dan tunggu persetujuan admin.</p>
+            @else
+                @foreach($books as $book)
+                    <div class="grid-item">
+                        <h2>{{ $book->title }}</h2>
+                        <p>{{ $book->author }}</p>
+                        <p>{{ $book->category }}</p>
+                        <p>{{ $book->year }}</p>
+                        <p>{{ $book->synopsis }}</p>
+                        <!-- Menampilkan Cover Buku -->
+                        @if($book->cover)
+                            <img src="{{ asset('storage/' . $book->cover) }}" alt="{{ $book->title }}" style="width: 100%; height: auto; border-radius: 8px;">
+                        @else
+                            <img src="https://via.placeholder.com/150x200?text=No+Cover" alt="No Cover" style="width: 100%; height: auto; border-radius: 8px;">
+                        @endif
+                    </div>
+                @endforeach
+            @endif
         </div>
     </div>
+
 
     <footer>
         © 2024 UReadStory - Privacy Policy | Help
