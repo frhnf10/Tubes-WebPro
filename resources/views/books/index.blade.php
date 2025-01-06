@@ -32,12 +32,18 @@
         <div class="grid">
             @foreach($books as $book)
                 <div class="grid-item">
+                    <h2>{{ $book->title }}</h2>
+                    <p>{{ $book->author }}</p>
+                    <p>{{ $book->category }}</p>
+                    <p>{{ $book->year }}</p>
+                    <p>{{ $book->synopsis }}</p>
                     <!-- Menampilkan Cover Buku -->
                     @if($book->cover)
                         <img src="{{ asset('storage/' . $book->cover) }}" alt="{{ $book->title }}" style="width: 100%; height: auto; border-radius: 8px;">
                     @else
                         <img src="https://via.placeholder.com/150x200?text=No+Cover" alt="No Cover" style="width: 100%; height: auto; border-radius: 8px;">
                     @endif
+                    <a href="{{ asset('storage/' . $book->file) }}" target="_blank">Download PDF</a>
                     <!-- Menampilkan Judul Buku -->
                     <p><strong>{{ $book->title }}</strong></p>
                     <!-- Menampilkan Status (Publish/Pending) -->

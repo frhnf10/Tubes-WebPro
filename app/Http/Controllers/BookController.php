@@ -7,13 +7,9 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function create()
-    {
-        return view('books.create');
-    }
-
     public function store(Request $request)
     {
+        // Untuk validasi input
         $request->validate([
             'title' => 'required',
             'author' => 'required',
@@ -23,10 +19,13 @@ class BookController extends Controller
             'synopsis' => 'nullable',
             'year' => 'required|integer',
         ]);
-
-        $coverPath = $request->file('cover') ? $request->file('cover')->store('covers') : null;
-        $filePath = $request->file('file')->store('books');
-
+    
+        // Menyimpan file cover ke storage
+        $coverPath = $request->file('cover') ? $request->file('cover')->store('covers', 'public') : null;
+        // Menyimpan file pdf ke storage
+        $filePath = $request->file('file')->store('books', 'public');
+    
+        // Menyimpan data ke database
         Book::create([
             'title' => $request->title,
             'author' => $request->author,
@@ -36,7 +35,7 @@ class BookController extends Controller
             'synopsis' => $request->synopsis,
             'year' => $request->year,
         ]);
-
+    
         return redirect()->route('books.index');
     }
 
