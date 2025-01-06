@@ -18,7 +18,7 @@
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
       <h5 class="text-center">UReadStory</h5>
-      <a href="{{ url('/adminpage') }}"><i class="fas fa-th-large"></i> Dashboard</a>
+      <a href="{{ url('/adminDashboard') }}"><i class="fas fa-th-large"></i> Dashboard</a>
       <a href="{{ url('/adminpage-userlist') }}"><i class="fas fa-users"></i> User List</a>
       <a href="{{ url('/admin-bookrequest') }}"><i class="fas fa-book"></i> Book Request</a>
     </div>
