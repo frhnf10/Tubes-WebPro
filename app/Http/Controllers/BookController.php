@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    public function create()
+    {
+        // Menampilkan view untuk formulir tambah buku
+        return view('books.create');
+    }
+
     public function store(Request $request)
     {
         // Untuk validasi input
@@ -41,7 +47,7 @@ class BookController extends Controller
 
     public function index()
     {
-        $books = Book   ::all();
+        $books = Book::all();
         return view('books.index', compact('books'));
     }
 }
