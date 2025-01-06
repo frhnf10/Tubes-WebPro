@@ -20,7 +20,7 @@
       <h5 class="text-center">UReadStory</h5>
       <a href="{{ url('/adminDashboard') }}"><i class="fas fa-th-large"></i> Dashboard</a>
       <a href="{{ url('/adminpage-userlist') }}"><i class="fas fa-users"></i> User List</a>
-      <a href="{{ url('/admin-bookrequest') }}"><i class="fas fa-book"></i> Book Request</a>
+      <a href="{{ url('/bookrequest') }}"><i class="fas fa-book"></i> Book Request</a>
     </div>
 
     <!-- Main content -->
@@ -30,7 +30,7 @@
         <h2 class="text-center">Dashboard</h2>
         <div class="dashboard-card mx-auto" style="max-width: 400px;">
           <!-- Menampilkan jumlah user dan buku dari database -->
-         <strong>{{$booksTotal}}</strong>
+         <strong>Buku Terdaftar: {{$booksTotal}}</strong>
 
         </div>
       </div>

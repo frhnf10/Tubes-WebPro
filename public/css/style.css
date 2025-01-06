@@ -175,3 +175,16 @@ footer {
     color: green;
     font-weight: bold;
 }
+
+.alert {
+    padding: 15px;
+    background-color: #d9edf7;
+    color: #31708f;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.grid p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+}

@@ -8,7 +8,9 @@ Route::get('/', [BookController::class, 'create'])->name('books.create');
 Route::post('/books', [BookController::class, 'store'])->name('books.store');
 Route::get('/books', [BookController::class, 'index'])->name('books.index');
 Route::get('/adminDashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-
+Route::get('/bookrequest', [BookController::class, 'showRequests'])->name('admin.bookrequests');
+Route::post('/bookrequest/{id}/approve', [BookController::class, 'approve'])->name('admin.bookrequests.approve'); // Approve buku
+Route::post('/bookrequest/{id}/reject', [BookController::class, 'reject'])->name('admin.bookrequests.reject'); // Reject buku
 Route::get('/addlibrary', function () {
     return view('addlibrary');
 });
@@ -21,9 +23,9 @@ Route::get('/adminpage', function () {
     return view('adminpage');
 });
 
-Route::get('/admin-bookrequest', function () {
-    return view('admin-bookrequest');
-});
+// Route::get('/adminbookrequest', function () {
+//     return view('adminbookrequest');
+// });
 
 Route::get('/dashboard-preview', function () {
     return view('dashboard-preview');
